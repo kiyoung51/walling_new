@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>벽지왕 (BYEOKJIWANG) | KCC샷시, KCC장판, LX디아망, 만능풀바른벽지, 도배부자재 전문몰</title>
+  <meta name="description" content="벽지왕 | KCC글라스 정품 샷시, KCC숲 장판, LX디아망 실크벽지, 소폭합지, 장폭합지, 만능 풀바른벽지, 도배공구 일체">
+  <meta name="keywords" content="벽지왕, 아리나데코, KCC샷시, KCC장판, LX디아망, 풀바른벽지, 소폭합지, 실크벽지, 도배부자재">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+
+  <!-- 1. Top Area (Utility Navigation) -->
+  <div class="toparea">
+    <div class="container">
+      <div class="toparea_util" id="topUtilArea">
+        <a href="#login" id="navLogin">로그인</a>
+        <span class="toparea_divider"></span>
+        <a href="#join" id="navJoin">회원가입</a>
+        <span class="toparea_divider"></span>
+        <a href="#order" id="navOrder">주문조회</a>
+        <span class="toparea_divider"></span>
+        <a href="#recent" id="navRecent">최근본상품 <span class="badge_recent_count" id="recentBadgeTop">0</span></a>
+        <span class="toparea_divider"></span>
+        <a href="#cs">고객센터</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Main Header & GNB -->
+  <header class="main_header">
+    <div class="container header_inner">
+      <!-- Left: Hamburger + Logo -->
+      <div class="brand_logo_area">
+        <button class="btn_hamburger" id="btnOpenDrawer" aria-label="전체 카테고리 열기">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <a href="#home" class="brand_logo_area">
+          <div class="logo_crown_icon">👑</div>
+          <div class="logo_text_group">
+            <div class="logo_main_title">벽지왕<span>.</span></div>
+            <div class="logo_sub_title">셀프도배 & 인테리어 자재 전문몰</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center: GNB Category Navigation -->
+      <nav class="top_category_nav" aria-label="메인 카테고리">
+        <div class="gnb_item">
+          <a href="#sashSection" class="gnb_link">KCC글라스(샷시)</a>
+        </div>
+
+        <div class="gnb_item">
+          <a href="#flooringSection" class="gnb_link">KCC숲(장판)</a>
+          <ul class="gnb_dropdown">
+            <li><a href="#flooringSection">숲 그린 1.8</a></li>
+            <li><a href="#flooringSection">숲 옥 2.2</a></li>
+            <li><a href="#flooringSection">숲 펫트 2.0</a></li>
+          </ul>
+        </div>
+
+        <div class="gnb_item">
+          <a href="#wallBoardSection" class="gnb_link">에디톤월</a>
+          <ul class="gnb_dropdown">
+            <li><a href="#wallBoardSection">에디톤 월 3.0T</a></li>
+            <li><a href="#wallBoardSection">에디톤 월 6.0T</a></li>
+          </ul>
+        </div>
+
+        <div class="gnb_item">
+          <a href="#bestSection" class="gnb_link" data-tab="narrow">소폭합지</a>
+          <ul class="gnb_dropdown">
+            <li><a href="#bestSection" data-tab="narrow">롤판매 소폭합지</a></li>
+            <li><a href="#bestSection" data-tab="narrow">박스판매 소폭합지</a></li>
+            <li><a href="#bestSection" data-tab="narrow">현장용(10평) 소폭합지</a></li>
+          </ul>
+        </div>
+
+        <div class="gnb_item">
+          <a href="#bestSection" class="gnb_link" data-tab="wide">장폭합지</a>
+          <ul class="gnb_dropdown">
+            <li><a href="#bestSection" data-tab="wide">벽지왕 기획벽지</a></li>
+            <li><a href="#bestSection" data-tab="wide">LX장폭합지</a></li>
+            <li><a href="#bestSection" data-tab="wide">10평천장용합지</a></li>
+          </ul>
+        </div>
+
+        <div class="gnb_item">
+          <a href="#newArrivalsSection" class="gnb_link">실크벽지</a>
+          <ul class="gnb_dropdown">
+            <li><a href="#newArrivalsSection">디아망</a></li>
+            <li><a href="#bestSection" data-tab="silk">베스띠</a></li>
+            <li><a href="#bestSection" data-tab="silk">테라피</a></li>
+            <li><a href="#bestSection" data-tab="silk">10평단위 천장용</a></li>
+            <li><a href="#bestSection" data-tab="silk">방염실크벽지</a></li>
+          </ul>
+        </div>
+
+        <div class="gnb_item">
+          <a href="#bestSection" class="gnb_link" data-tab="narrow">질석벽지</a>
+          <ul class="gnb_dropdown">
+            <li><a href="#bestSection" data-tab="narrow">질석벽지(3평)</a></li>
+            <li><a href="#bestSection" data-tab="narrow">질석벽지(5평)</a></li>
+            <li><a href="#bestSection" data-tab="narrow">질석벽지(1M단위판매)</a></li>
+          </ul>
+        </div>
+
+        <div class="gnb_item">
+          <a href="#bestSection" class="gnb_link" data-tab="narrow">접착식벽지</a>
+          <ul class="gnb_dropdown">
+            <li><a href="#bestSection" data-tab="narrow">단열벽지</a></li>
+            <li><a href="#bestSection" data-tab="narrow">실크 접착벽지</a></li>
+          </ul>
+        </div>
+
+        <div class="gnb_item">
+          <a href="#bestSection" class="gnb_link" data-tab="tools">도배용품</a>
+          <ul class="gnb_dropdown">
+            <li><a href="#bestSection" data-tab="tools">정배솔</a></li>
+            <li><a href="#bestSection" data-tab="tools">가루풀/도배풀</a></li>
+            <li><a href="#bestSection" data-tab="tools">도배붓/헤라</a></li>
+            <li><a href="#bestSection" data-tab="tools">칼받이/실리콘</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Right: Search, MyPage, Basket Icons -->
+      <div class="header_icons_area">
+        <button class="header_icon_btn" id="btnSearchToggle" aria-label="검색">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+
+        <a href="#mypage" class="header_icon_btn" aria-label="마이쇼핑">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </a>
+
+        <a href="#cart" class="header_icon_btn" aria-label="장바구니">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="badge_cart_count" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HOME VIEW WRAPPER -->
+  <div id="homeView">
+    <!-- 3. Hero Smart Banner Carousel -->
+    <section class="hero_slider_section">
+      <div id="heroSlider" style="width: 100%; height: 100%; position: relative;"></div>
+      
+      <button class="hero_arrow_btn hero_arrow_prev" id="heroPrev" aria-label="이전 배너">❮</button>
+      <button class="hero_arrow_btn hero_arrow_next" id="heroNext" aria-label="다음 배너">❯</button>
+
+      <div class="hero_pagination" id="heroPagination"></div>
+    </section>
+
+    <!-- 4. Section 1: KCC글라스 정품 샷시 -->
+    <section class="mall_section" id="sashSection">
+      <div class="container">
+        <div class="section_title_area">
+          <h2 class="section_main_title">KCC글라스 정품 샷시</h2>
+          <div class="section_sub_title">냉·난방비 폭탄? 정품 KCC샷시로 해결!</div>
+        </div>
+
+        <ul class="prdList_grid4" id="sashProductList"></ul>
+      </div>
+    </section>
+
+    <!-- 5. Section 2: KCC 숲 친환경 바닥재 (장판) -->
+    <section class="mall_section" id="flooringSection" style="background-color: #FBFBFB;">
+      <div class="container">
+        <div class="section_title_area">
+          <h2 class="section_main_title">KCC 숲 친환경 바닥재 (장판)</h2>
+          <div class="section_sub_title">원목 질감과 층간소음 방지 쿠션을 갖춘 1롤 35m 대용량 바닥재</div>
+        </div>
+
+        <ul class="prdList_grid4" id="flooringProductList"></ul>
+      </div>
+    </section>
+
+    <!-- 5-1. Section: LX Z:IN 디자인 벽장재 (에디톤 월) -->
+    <section class="mall_section" id="wallBoardSection">
+      <div class="container">
+        <div class="section_title_area">
+          <h2 class="section_main_title">LX Z:IN 프리미엄 벽장재 (에디톤 월)</h2>
+          <div class="section_sub_title">천연 대리석과 인더스트리얼 콘크리트 질감을 정밀 구현한 무메지 하이엔드 아트월 (4.0×600×1200mm, 4PC/BOX)</div>
+        </div>
+
+        <ul class="prdList_grid4" id="wallBoardProductList"></ul>
+      </div>
+    </section>
+
+    <!-- 6. Section 3: 벽지왕 베스트 상품 (Tabbed Showcase) -->
+    <section class="mall_section" id="bestSection" style="background-color: #FBFBFB;">
+      <div class="container">
+        <div class="section_title_area">
+          <h2 class="section_main_title">벽지왕 베스트 상품</h2>
+          <div class="section_sub_title">꾸준하게 인기있는 상품</div>
+        </div>
+
+        <!-- Tab Buttons -->
+        <div class="main_product_tab">
+          <button class="main_tab_btn active" data-tab="narrow">소폭벽지</button>
+          <button class="main_tab_btn" data-tab="wide">장폭합지</button>
+          <button class="main_tab_btn" data-tab="silk">실크벽지</button>
+          <button class="main_tab_btn" data-tab="tools">도배용품</button>
+        </div>
+
+        <!-- Products Grid -->
+        <ul class="prdList_grid4" id="bestProductList"></ul>
+      </div>
+    </section>
+
+    <!-- 7. Promotional Callout Banner -->
+    <div class="container">
+      <div class="promo_callout_banner">
+        <div class="promo_text_area">
+          <h3>우리 집에 꼭 맞는 벽지·창호 자재 실측 견적 상담</h3>
+          <p>
+            평수 계산이 어려우시거나 KCC글라스 정품 샷시 시공을 원하시는 고객님께<br>
+            벽지왕 전문 실측 기사가 서울/경기 전지역 무료로 최적 견적을 안내해드립니다.
+          </p>
+        </div>
+        <a href="tel:1800-0000" class="promo_action_btn">실시간 전화 상담 (1800-0000)</a>
+      </div>
+    </div>
+
+    <!-- 8. Section 4: NEW! ARRIVALS (신상품) -->
+    <section class="mall_section" id="newArrivalsSection" style="background-color: #FBFBFB;">
+      <div class="container">
+        <div class="section_title_area">
+          <h2 class="section_main_title">NEW! ARRIVALS</h2>
+          <div class="section_sub_title">2025/2026 신규 디아망 & 만능 풀바른벽지</div>
+        </div>
+
+        <ul class="prdList_grid4" id="newArrivalsList"></ul>
+      </div>
+    </section>
+  </div><!-- //homeView -->
+
+  <!-- PRODUCT DETAIL VIEW CONTAINER -->
+  <div id="productDetailView" class="product_detail_view">
+    <div class="container" id="detailContainer"></div>
+  </div>
+
+  <!-- ADMIN CONSOLE VIEW CONTAINER (관리자 전용) -->
+  <div id="adminView" class="admin_view" style="display: none;">
+    <div class="container">
+      <!-- Admin Header -->
+      <header class="admin_header">
+        <div class="admin_brand">
+          <span class="admin_crown">👑</span>
+          <div>
+            <h1 class="admin_title">벽지왕 관리자 센터</h1>
+            <div class="admin_badge">BYEOKJIWANG ADMIN CONSOLE</div>
+          </div>
+        </div>
+        <div class="admin_header_actions">
+          <span class="admin_user_tag" id="adminUserTag">최고관리자 (admin)</span>
+          <a href="#home" class="btn_admin_head btn_admin_gohome" id="btnAdminGoHome">🛍️ 쇼핑몰 메인으로</a>
+          <button type="button" class="btn_admin_head btn_admin_logout" id="btnAdminLogout">로그아웃</button>
+        </div>
+      </header>
+
+      <!-- Admin Stat Summary Cards -->
+      <div class="admin_stats_grid">
+        <div class="admin_stat_card">
+          <div class="stat_icon_box" style="background: #E0F2FE; color: #0284C7;">📦</div>
+          <div>
+            <div class="stat_label">총 등록 상품</div>
+            <div class="stat_value"><span id="adminStatTotalProducts">0</span>개</div>
+          </div>
+        </div>
+        <div class="admin_stat_card">
+          <div class="stat_icon_box" style="background: #EDE9FE; color: #7C3AED;">🏷️</div>
+          <div>
+            <div class="stat_label">운영 카테고리</div>
+            <div class="stat_value"><span id="adminStatTotalCategories">9</span>개</div>
+          </div>
+        </div>
+        <div class="admin_stat_card">
+          <div class="stat_icon_box" style="background: #DCFCE7; color: #16A34A;">📋</div>
+          <div>
+            <div class="stat_label">접수된 주문</div>
+            <div class="stat_value"><span id="adminStatTotalOrders">0</span>건</div>
+          </div>
+        </div>
+        <div class="admin_stat_card">
+          <div class="stat_icon_box" style="background: #FEF3C7; color: #D97706;">🚚</div>
+          <div>
+            <div class="stat_label">무료배송 정책</div>
+            <div class="stat_value" style="font-size: 16px;">50,000원 이상</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Admin Main Tabs -->
+      <div class="admin_tab_bar">
+        <button type="button" class="admin_tab_btn active" data-admin-tab="products">📦 상품 관리 (등록/수정/삭제)</button>
+        <button type="button" class="admin_tab_btn" data-admin-tab="orders">📋 실시간 주문/배송 관리</button>
+      </div>
+
+      <!-- Tab 1: Product Management Panel -->
+      <section class="admin_panel active" id="adminPanelProducts">
+        <div class="admin_toolbar">
+          <div class="admin_toolbar_left">
+            <div class="admin_search_wrap">
+              <input type="text" id="adminProductSearchInput" placeholder="상품명 또는 상품ID 실시간 검색..." autocomplete="off">
+            </div>
+            <select id="adminProductCategoryFilter" class="admin_select_filter">
+              <option value="전체">전체 카테고리 (All)</option>
+              <option value="KCC글라스(샷시)">KCC글라스(샷시)</option>
+              <option value="KCC숲(장판)">KCC숲(장판)</option>
+              <option value="에디톤월">에디톤월</option>
+              <option value="소폭합지">소폭합지</option>
+              <option value="장폭합지">장폭합지</option>
+              <option value="실크벽지">실크벽지</option>
+              <option value="질석벽지">질석벽지</option>
+              <option value="접착식벽지">접착식벽지</option>
+              <option value="도배용품">도배용품</option>
+            </select>
+          </div>
+          <div class="admin_toolbar_right">
+            <button type="button" class="btn_admin_primary" id="btnAdminOpenAddModal">+ 신규 제품 등록</button>
+            <button type="button" class="btn_admin_secondary" id="btnAdminResetDefaults">🔄 기본 카탈로그 초기화</button>
+          </div>
+        </div>
+
+        <div class="admin_table_container">
+          <table class="admin_table">
+            <thead>
+              <tr>
+                <th style="width: 70px;">이미지</th>
+                <th style="width: 130px;">상품 ID</th>
+                <th style="width: 130px;">카테고리</th>
+                <th>상품명 / 규격 / 요약</th>
+                <th style="width: 120px;">판매가</th>
+                <th style="width: 90px;">뱃지</th>
+                <th style="width: 150px; text-align: center;">관리 기능</th>
+              </tr>
+            </thead>
+            <tbody id="adminProductTableBody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Tab 2: Orders Management Panel -->
+      <section class="admin_panel" id="adminPanelOrders" style="display: none;">
+        <div class="admin_table_container">
+          <table class="admin_table">
+            <thead>
+              <tr>
+                <th style="width: 160px;">주문번호</th>
+                <th style="width: 140px;">주문일시</th>
+                <th style="width: 120px;">주문자</th>
+                <th>주문 내역 (품목/수량)</th>
+                <th style="width: 110px;">결제금액</th>
+                <th style="width: 170px;">배송상태 변경</th>
+                <th>배송지</th>
+              </tr>
+            </thead>
+            <tbody id="adminOrdersTableBody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- 9. Floating Right Wing Quick Menu -->
+  <aside class="quick_wing_bar" aria-label="빠른 메뉴">
+    <a href="#cart" class="wing_btn" id="wingBtnCart" aria-label="장바구니 바로가기">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+      </svg>
+      <span>장바구니</span>
+      <span class="badge_cart_count wing_cart_badge" style="display: none;">0</span>
+    </a>
+    <a href="#recent" class="wing_btn" id="wingBtnRecent">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <span>최근상품</span>
+      <span class="badge_recent_count" id="recentBadgeWing">0</span>
+    </a>
+    <a href="https://pf.kakao.com" target="_blank" class="wing_btn" style="color: #371D1E; font-weight: 700;">
+      <span style="font-size: 16px;">💬</span>
+      <span>카톡상담</span>
+    </a>
+    <button class="wing_btn top_btn" id="btnScrollTop" aria-label="맨 위로 이동">
+      <span>▲</span>
+      <span>TOP</span>
+    </button>
+  </aside>
+
+  <!-- 10. Left Sidebar Navigation Drawer (모바일/PC 카테고리 메뉴) -->
+  <div class="side_drawer_overlay" id="sideDrawerOverlay"></div>
+  <aside class="side_drawer" id="sideDrawer" aria-label="전체 카테고리 서랍">
+    <div class="drawer_header">
+      <div class="drawer_title">👑 전체 카테고리</div>
+      <button class="drawer_close_btn" id="btnCloseDrawer" aria-label="닫기">✕</button>
+    </div>
+
+    <div class="drawer_menu_list">
+      <div class="drawer_menu_item"><a href="#sashSection">KCC글라스(샷시)</a></div>
+      <div class="drawer_menu_item"><a href="#flooringSection">KCC숲(장판)</a></div>
+      <div class="drawer_menu_item"><a href="#wallBoardSection">에디톤월</a></div>
+      <div class="drawer_menu_item"><a href="#bestSection">소폭합지</a></div>
+      <div class="drawer_menu_item"><a href="#bestSection">장폭합지</a></div>
+      <div class="drawer_menu_item"><a href="#newArrivalsSection">실크벽지</a></div>
+      <div class="drawer_menu_item"><a href="#bestSection">질석벽지</a></div>
+      <div class="drawer_menu_item"><a href="#bestSection">접착식벽지</a></div>
+      <div class="drawer_menu_item"><a href="#bestSection">도배용품</a></div>
+      <div class="drawer_menu_item"><a href="#cs" style="color: var(--primary-color);">고객센터 / 사용후기</a></div>
+    </div>
+  </aside>
+
+  <!-- 11. Main Footer (Exact Arina Deco Architecture) -->
+  <footer class="main_footer" id="cs">
+    <div class="container">
+      <div class="footer_top_links">
+        <a href="#about">회사소개</a>
+        <a href="#terms">이용약관</a>
+        <a href="#privacy"><strong>개인정보처리방침</strong></a>
+        <a href="#guide">이용안내</a>
+        <a href="#partnership">제휴/도매문의</a>
+      </div>
+
+      <div class="footer_grid">
+        <!-- Col 1: Company Info -->
+        <div class="footer_company_info">
+          <div class="footer_logo_text">벽지왕 (BYEOKJIWANG)</div>
+          <p>
+            상호명: (주)벽지왕 | 대표자: 홍길동 | 개인정보관리책임자: 벽지왕<br>
+            사업자등록번호: 000-00-00000 [사업자정보확인]<br>
+            통신판매업신고번호: 제2026-서울강남-00000호<br>
+            소재지: 서울특별시 강남구 테헤란로 000 벽지왕 빌딩 4층<br>
+            통신판매 분쟁조정기관: 공정거래위원회
+          </p>
+        </div>
+
+        <!-- Col 2: Customer Center -->
+        <div>
+          <div class="footer_cs_title">고객만족센터</div>
+          <div class="footer_cs_phone">1800-0000</div>
+          <p style="line-height: 1.8; color: #666;">
+            운영시간: 평일 09:00 ~ 18:00<br>
+            점심시간: 12:00 ~ 13:00<br>
+            토요일/일요일/공휴일 휴무<br>
+            이메일: help@byeokjiwang.co.kr
+          </p>
+        </div>
+
+        <!-- Col 3: Bank Account & Escrow -->
+        <div>
+          <div class="footer_cs_title">입금계좌 안내</div>
+          <div class="footer_bank_box">
+            <p style="font-weight: 700; color: #111;">농협은행 301-0000-0000-00</p>
+            <p style="color: #666; margin-top: 4px;">예금주: (주)벽지왕</p>
+          </div>
+          <div style="margin-top: 14px; font-size: 11px; color: #888;">
+            ✓ KB국민은행 에스크로 구매안전서비스 적용<br>
+            고객님의 안전거래를 위해 현금 결제 시 구매안전서비스를 이용하실 수 있습니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer_bottom_copy">
+        <p>© 2026 BYEOKJIWANG Co., Ltd. All Rights Reserved.</p>
+        <p>Hosting by Vercel / Netlify / Node</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS & SLIDE-OUT DRAWERS (회원가입, 로그인, 주문조회, 최근본상품, 장바구니, 퀵옵션)
+       ========================================================================== -->
+
+  <!-- 1. AUTH MODAL (로그인 / 회원가입) -->
+  <div class="modal_overlay" id="authModalOverlay">
+    <div class="modal_box auth_modal_box" role="dialog" aria-modal="true">
+      <button class="modal_close_btn" id="btnCloseAuthModal" aria-label="닫기">✕</button>
+      
+      <div class="auth_tab_bar">
+        <button type="button" class="auth_tab_btn active" id="tabBtnLogin" data-target="login">로그인</button>
+        <button type="button" class="auth_tab_btn" id="tabBtnSignup" data-target="signup">회원가입</button>
+      </div>
+
+      <!-- Login Form Panel -->
+      <div class="auth_panel active" id="panelLogin">
+        <h3 class="auth_heading">벽지왕 회원 로그인</h3>
+        <p class="auth_subtext">로그인하시면 맞춤 견적 확인 및 적립금 혜택을 이용하실 수 있습니다.</p>
+        
+        <form id="formLogin" class="auth_form">
+          <div class="form_group">
+            <label for="loginId">아이디</label>
+            <input type="text" id="loginId" class="auth_input" placeholder="아이디를 입력하세요 (예: user1)" required value="user1">
+          </div>
+          <div class="form_group">
+            <label for="loginPw">비밀번호</label>
+            <input type="password" id="loginPw" class="auth_input" placeholder="비밀번호를 입력하세요" required value="123456">
+          </div>
+          <div class="form_extra_row">
+            <label class="checkbox_label">
+              <input type="checkbox" id="chkAutoLogin" checked>
+              <span>로그인 상태 유지</span>
+            </label>
+            <a href="#order" class="link_guest_order" id="btnGoGuestOrder">비회원 주문조회 &gt;</a>
+          </div>
+          <button type="submit" class="btn_auth_submit">로그인</button>
+          <button type="button" class="btn_demo_admin" id="btnFillAdminLogin" style="width: 100%; margin-top: 8px; padding: 8px; background: #FEF3C7; border: 1px dashed #F59E0B; border-radius: 4px; font-size: 12px; font-weight: 700; color: #B45309; cursor: pointer;">🔑 관리자(admin) 계정 1초 입력</button>
+          <button type="button" class="btn_quick_admin" id="btnQuickAdminLogin" style="width: 100%; margin-top: 8px; padding: 10px; background: #6D28D9; color: #ffffff; border: none; border-radius: 4px; font-size: 13px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 2px 6px rgba(109,40,217,0.35);">
+            <span>👑</span> 최고관리자(admin) 1초 즉시 접속
+          </button>
+        </form>
+
+        <div class="social_login_area">
+          <div class="social_divider"><span>간편 1초 로그인</span></div>
+          <button type="button" class="btn_social btn_kakao" id="btnKakaoLogin">
+            <span class="social_icon">💬</span> 카카오로 1초 시작하기
+          </button>
+          <button type="button" class="btn_social btn_naver" id="btnNaverLogin">
+            <span class="social_icon">N</span> 네이버 아이디로 로그인
+          </button>
+        </div>
+      </div>
+
+      <!-- Signup Form Panel -->
+      <div class="auth_panel" id="panelSignup">
+        <h3 class="auth_heading">벽지왕 신규 회원가입</h3>
+        <p class="auth_subtext">지금 가입하시면 <strong>즉시 사용 가능한 5,000P 웰컴 적립금</strong> 지급!</p>
+        
+        <form id="formSignup" class="auth_form">
+          <div class="form_group">
+            <label>회원 구분</label>
+            <div class="user_type_selector">
+              <label class="radio_label">
+                <input type="radio" name="signupUserType" value="normal" checked>
+                <span>일반 고객 (셀프도배/홈인테리어)</span>
+              </label>
+              <label class="radio_label">
+                <input type="radio" name="signupUserType" value="business">
+                <span>인테리어 시공/사업자 (도매 특가 혜택)</span>
+              </label>
+            </div>
+          </div>
+          <div class="form_group">
+            <label for="signupId">아이디</label>
+            <input type="text" id="signupId" class="auth_input" placeholder="영문/숫자 4자 이상" required>
+          </div>
+          <div class="form_group">
+            <label for="signupPw">비밀번호</label>
+            <input type="password" id="signupPw" class="auth_input" placeholder="영문, 숫자 포함 6자 이상" required>
+          </div>
+          <div class="form_group">
+            <label for="signupName">이름 (담당자명)</label>
+            <input type="text" id="signupName" class="auth_input" placeholder="성함을 입력하세요" required>
+          </div>
+          <div class="form_group">
+            <label for="signupPhone">휴대폰 번호</label>
+            <input type="tel" id="signupPhone" class="auth_input" placeholder="010-0000-0000" required>
+          </div>
+          <div class="form_group">
+            <label for="signupAddress">도배자재 배송 주소</label>
+            <input type="text" id="signupAddress" class="auth_input" placeholder="기본 배송지 주소를 입력하세요">
+          </div>
+          <div class="terms_agree_box">
+            <label class="checkbox_label">
+              <input type="checkbox" id="agreeTerms" required checked>
+              <span>[필수] 벽지왕 이용약관 및 개인정보 수집/이용 동의</span>
+            </label>
+          </div>
+          <button type="submit" class="btn_auth_submit">회원가입 완료하고 5,000P 받기</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ORDER MODAL (주문조회 / 배송현황) -->
+  <div class="modal_overlay" id="orderModalOverlay">
+    <div class="modal_box order_modal_box" role="dialog" aria-modal="true">
+      <button class="modal_close_btn" id="btnCloseOrderModal" aria-label="닫기">✕</button>
+      
+      <div class="auth_tab_bar">
+        <button type="button" class="auth_tab_btn active" id="tabBtnMemberOrders">회원 주문내역</button>
+        <button type="button" class="auth_tab_btn" id="tabBtnGuestOrders">비회원 주문조회</button>
+      </div>
+
+      <!-- Member Orders Panel -->
+      <div class="auth_panel active" id="panelMemberOrders">
+        <div class="order_panel_header">
+          <h3 class="auth_heading">주문/배송 내역 조회</h3>
+          <span class="order_notice_badge">실시간 배송조회 가능</span>
+        </div>
+        <div id="memberOrdersList" class="orders_list_container"></div>
+      </div>
+
+      <!-- Guest Order Lookup Panel -->
+      <div class="auth_panel" id="panelGuestOrders">
+        <h3 class="auth_heading">비회원 주문 조회</h3>
+        <p class="auth_subtext">주문 시 입력하셨던 주문자명과 주문번호를 입력해 주세요.</p>
+        
+        <form id="formGuestOrder" class="auth_form">
+          <div class="form_group">
+            <label for="guestOrderName">주문자명</label>
+            <input type="text" id="guestOrderName" class="auth_input" placeholder="홍길동" required>
+          </div>
+          <div class="form_group">
+            <label for="guestOrderNo">주문번호</label>
+            <input type="text" id="guestOrderNo" class="auth_input" placeholder="예: BYK-20261018-84920" required>
+          </div>
+          <div style="margin-bottom: 12px; display: flex; gap: 8px;">
+            <button type="button" class="btn_sample_fill" id="btnFillSampleOrder">샘플 주문번호 자동입력</button>
+          </div>
+          <button type="submit" class="btn_auth_submit">비회원 주문 조회하기</button>
+        </form>
+
+        <div id="guestOrderResult" class="guest_order_result"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. RECENT PRODUCTS SLIDE DRAWER (최근본상품) -->
+  <div class="side_drawer_overlay" id="recentDrawerOverlay"></div>
+  <aside class="slide_drawer_right" id="recentDrawer" aria-label="최근 본 상품">
+    <div class="drawer_header">
+      <div class="drawer_title">👀 최근 본 상품 (<span id="recentDrawerCount">0</span>)</div>
+      <button class="drawer_close_btn" id="btnCloseRecentDrawer" aria-label="닫기">✕</button>
+    </div>
+    <div class="drawer_util_row">
+      <span>최대 15개까지 보관됩니다.</span>
+      <button type="button" class="btn_clear_recent" id="btnClearRecent">전체 삭제</button>
+    </div>
+    <div class="recent_item_list" id="recentItemList"></div>
+  </aside>
+
+  <!-- 4. CART SLIDE DRAWER (장바구니 드로어) -->
+  <div class="side_drawer_overlay" id="cartDrawerOverlay"></div>
+  <aside class="slide_drawer_right" id="cartDrawer" aria-label="장바구니">
+    <div class="drawer_header">
+      <div class="drawer_title">🛒 장바구니 (<span id="cartDrawerItemCount">0</span>)</div>
+      <button class="drawer_close_btn" id="btnCloseCartDrawer" aria-label="닫기">✕</button>
+    </div>
+    
+    <!-- Free Shipping Progress -->
+    <div class="free_shipping_meter" id="freeShippingMeterBox">
+      <div class="meter_text" id="freeShippingText">50,000원 이상 무료배송!</div>
+      <div class="meter_bar_bg">
+        <div class="meter_bar_fill" id="meterBarFill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Item List -->
+    <div class="cart_drawer_items" id="cartDrawerItems"></div>
+
+    <!-- Cart Drawer Footer -->
+    <div class="cart_drawer_footer">
+      <div class="cart_summary_row">
+        <span>상품금액</span>
+        <strong id="cartSubtotalText">0원</strong>
+      </div>
+      <div class="cart_summary_row">
+        <span>배송비</span>
+        <span id="cartDeliveryText">0원</span>
+      </div>
+      <div class="cart_summary_total">
+        <span>총 결제예정금액</span>
+        <strong class="total_sum_val" id="cartGrandTotalText">0원</strong>
+      </div>
+      <button type="button" class="btn_cart_checkout" id="btnCartCheckout">주문서 작성하기 / 결제</button>
+      <button type="button" class="btn_cart_clear" id="btnClearCart">장바구니 비우기</button>
+    </div>
+  </aside>
+
+  <!-- 5. QUICK OPTION SELECT MODAL (상품 카드 OPTION 클릭 시) -->
+  <div class="modal_overlay" id="optionModalOverlay">
+    <div class="modal_box quick_option_box" role="dialog" aria-modal="true">
+      <button class="modal_close_btn" id="btnCloseOptionModal" aria-label="닫기">✕</button>
+      <div class="quick_option_content" id="quickOptionContent"></div>
+    </div>
+  </div>
+
+  <!-- 6. CHECKOUT SUCCESS MODAL (주문 완료 팝업) -->
+  <div class="modal_overlay" id="checkoutSuccessModalOverlay">
+    <div class="modal_box success_modal_box" role="dialog" aria-modal="true">
+      <div class="success_icon">🎉</div>
+      <h3 class="success_title">주문이 정상적으로 접수되었습니다!</h3>
+      <p class="success_subtext">벽지왕을 이용해 주셔서 감사합니다. 정성을 다해 안전하게 배송해 드리겠습니다.</p>
+      
+      <div class="order_summary_card" id="checkoutSuccessDetails"></div>
+      
+      <div class="success_actions">
+        <button type="button" class="btn_success_view_order" id="btnSuccessViewOrder">주문/배송 내역 확인</button>
+        <button type="button" class="btn_success_continue" id="btnSuccessContinue">쇼핑 계속하기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. SEARCH MODAL OVERLAY (헤더 돋보기 클릭 시 실시간 상품 검색) -->
+  <div class="modal_overlay" id="searchModalOverlay">
+    <div class="modal_box search_modal_box" role="dialog" aria-modal="true">
+      <button class="modal_close_btn" id="btnCloseSearchModal" aria-label="닫기">✕</button>
+      
+      <div class="search_modal_header">
+        <h3 class="search_modal_title">🔍 벽지왕 통합 상품 검색</h3>
+        <p class="search_modal_sub">원하시는 벽지, 장판, 에디톤월, 샷시의 상품명이나 모델명을 검색하세요.</p>
+      </div>
+
+      <div class="search_input_wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#888888" class="search_icon_inner">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input type="text" id="globalSearchInput" class="global_search_input" placeholder="상품명, 품번(예: 디아망, 에디톤, 솔티, 4092, 숲 그린) 검색..." autocomplete="off">
+        <button type="button" class="btn_search_clear" id="btnSearchClear" style="display: none;">✕</button>
+      </div>
+
+      <!-- Hot Keyword Tags -->
+      <div class="search_hot_tags">
+        <span class="hot_tag_label">인기 키워드:</span>
+        <button type="button" class="btn_hot_tag" data-tag="디아망">#디아망</button>
+        <button type="button" class="btn_hot_tag" data-tag="에디톤">#에디톤월</button>
+        <button type="button" class="btn_hot_tag" data-tag="솔티">#솔티브라운</button>
+        <button type="button" class="btn_hot_tag" data-tag="숲 그린">#KCC장판</button>
+        <button type="button" class="btn_hot_tag" data-tag="스마트">#KCC창호</button>
+        <button type="button" class="btn_hot_tag" data-tag="풀바른">#풀바른벽지</button>
+        <button type="button" class="btn_hot_tag" data-tag="휘앙세">#소폭합지</button>
+      </div>
+
+      <!-- Live Search Results Area -->
+      <div class="search_results_container" id="searchResultsContainer">
+        <div class="search_empty_hint">
+          <span style="font-size: 24px; display: block; margin-bottom: 8px;">💡</span>
+          검색어를 입력하시면 즉시 실시간으로 상품을 찾아드립니다.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. ADMIN PRODUCT EDIT / ADD MODAL (관리자 상품 등록/수정 모달) -->
+  <div class="modal_overlay" id="adminProductModalOverlay">
+    <div class="modal_box admin_product_modal_box" role="dialog" aria-modal="true">
+      <button class="modal_close_btn" id="btnCloseAdminProductModal" aria-label="닫기">✕</button>
+      
+      <div class="admin_modal_header">
+        <h3 class="admin_modal_title" id="adminProductModalTitle">✨ 신규 상품 등록</h3>
+        <p class="admin_modal_sub">새로운 인테리어 자재 상품의 정보, 규격, 옵션, 판매가를 입력하세요.</p>
+      </div>
+
+      <form id="formAdminProduct" class="admin_product_form">
+        <input type="hidden" id="formAdminProdId">
+
+        <div class="admin_form_row">
+          <div class="admin_form_group">
+            <label for="formAdminProdCategory">카테고리 <span class="required">*</span></label>
+            <select id="formAdminProdCategory" required>
+              <option value="에디톤월">에디톤월 (벽장재/아트월)</option>
+              <option value="KCC숲(장판)">KCC숲(장판)</option>
+              <option value="KCC글라스(샷시)">KCC글라스(샷시)</option>
+              <option value="소폭합지">소폭합지</option>
+              <option value="장폭합지">장폭합지</option>
+              <option value="실크벽지">실크벽지</option>
+              <option value="질석벽지">질석벽지</option>
+              <option value="접착식벽지">접착식벽지</option>
+              <option value="도배용품">도배용품</option>
+            </select>
+          </div>
+          <div class="admin_form_group">
+            <label for="formAdminProdBadge">노출 뱃지</label>
+            <select id="formAdminProdBadge">
+              <option value="">(뱃지 없음)</option>
+              <option value="BEST">BEST</option>
+              <option value="NEW">NEW</option>
+              <option value="재고보유">재고보유</option>
+              <option value="특가">특가</option>
+              <option value="인기">인기</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="admin_form_group">
+          <label for="formAdminProdName">상품명 <span class="required">*</span></label>
+          <input type="text" id="formAdminProdName" placeholder="예: LX Z:IN 디자인 벽장재 에디톤 월 EDL6850 노블 마블" required>
+        </div>
+
+        <div class="admin_form_row">
+          <div class="admin_form_group">
+            <label for="formAdminProdPrice">판매가 (원) <span class="required">* (0 입력 시 견적상담)</span></label>
+            <input type="number" id="formAdminProdPrice" placeholder="75000" min="0" required>
+          </div>
+          <div class="admin_form_group">
+            <label for="formAdminProdSpec">규격 / 사양</label>
+            <input type="text" id="formAdminProdSpec" placeholder="예: 4.0×600×1200mm (4PC/BOX 2.88㎡)">
+          </div>
+        </div>
+
+        <div class="admin_form_group">
+          <label for="formAdminProdSummary">요약 설명</label>
+          <input type="text" id="formAdminProdSummary" placeholder="예: 고급 천연 대리석 텍스처와 무메지 시공의 프리미엄 아트월">
+        </div>
+
+        <div class="admin_form_group">
+          <label for="formAdminProdImage">대표 이미지 URL <span class="required">*</span></label>
+          <input type="url" id="formAdminProdImage" placeholder="https://..." required>
+          
+          <div class="preset_img_tags">
+            <span style="font-size: 11px; color: #6B7280; font-weight: 700;">빠른 예시 이미지 선택:</span>
+            <button type="button" class="btn_img_preset" data-url="https://ecimg.cafe24img.com/pg437b79500102030/seo8464200/web/product/medium/20231219/4889107ae9db41d5662673ca37f0a72a.jpg">에디톤 브라운</button>
+            <button type="button" class="btn_img_preset" data-url="https://ecimg.cafe24img.com/pg437b79500102030/seo8464200/web/product/medium/20231219/b89ec5f7617bfea3964a5e80b4bf9f01.jpg">에디톤 콘크리트</button>
+            <button type="button" class="btn_img_preset" data-url="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=800&q=80">KCC 숲 오크</button>
+            <button type="button" class="btn_img_preset" data-url="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=800&q=80">디아망 스투코</button>
+            <button type="button" class="btn_img_preset" data-url="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=800&q=80">도배솔/부자재</button>
+          </div>
+        </div>
+
+        <div class="admin_form_row">
+          <div class="admin_form_group">
+            <label for="formAdminProdOptions">주문 옵션 (줄바꿈으로 구분)</label>
+            <textarea id="formAdminProdOptions" rows="3" placeholder="[기본] 단품 1박스 주문&#10;전용 접착제 + 실리콘 세트 추가 (+15,000원)"></textarea>
+          </div>
+          <div class="admin_form_group">
+            <label for="formAdminProdDelivery">배송비 정책</label>
+            <input type="text" id="formAdminProdDelivery" placeholder="3,000원 (50,000원 이상 무료배송) 또는 화물택배">
+          </div>
+        </div>
+
+        <div class="admin_form_group">
+          <label for="formAdminProdDesc">상세 설명 안내 (HTML 가능)</label>
+          <textarea id="formAdminProdDesc" rows="3" placeholder="<h3>제품 특징</h3><p>친환경 고강도 프리미엄 자재입니다.</p>"></textarea>
+        </div>
+
+        <div class="admin_modal_actions">
+          <button type="submit" class="btn_admin_save" id="btnAdminSaveProduct">💾 상품 저장하기</button>
+          <button type="button" class="btn_admin_cancel" id="btnAdminCancelProduct">취소</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
