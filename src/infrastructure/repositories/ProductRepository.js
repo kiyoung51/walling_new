@@ -32,6 +32,13 @@ export class ProductRepository {
     if (suffix) return suffix;
     const partial = products.find(p => p.id.toLowerCase().includes(query));
     if (partial) return partial;
+
+    // Fallback directly to ALL_PRODUCTS catalog
+    const catalogMatch = ALL_PRODUCTS.find(p => p.id.toLowerCase() === query) ||
+                         ALL_PRODUCTS.find(p => p.id.toLowerCase().endsWith(`-${query}`)) ||
+                         ALL_PRODUCTS.find(p => p.id.toLowerCase().includes(query));
+    if (catalogMatch) return new Product(catalogMatch);
+
     return products[0] || null;
   }
 

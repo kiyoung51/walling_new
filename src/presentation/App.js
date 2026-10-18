@@ -101,20 +101,27 @@ export class App {
     });
 
     // Product Detail Routes
-    router.register('^#(product|detail)-(?<id>.+)$', ({ id }) => {
+    router.register('^#(product|detail)-(?<id>.+)$', (params, fullHash, match) => {
       this.closeAllOverlays();
-      const product = useCases.getProductById.execute(id);
+      let prodId = params?.id;
+      if (!prodId && match && match[2]) prodId = match[2];
+      if (!prodId && typeof fullHash === 'string') {
+        prodId = fullHash.replace(/^#(product|detail)-/i, '');
+      }
+
+      const product = useCases.getProductById.execute(prodId);
       if (product) {
         if (this.homeView) this.homeView.style.display = 'none';
         if (this.adminView) this.adminView.style.display = 'none';
         if (this.detailView) {
           this.detailView.classList.add('active');
+          this.detailView.style.display = 'block';
           productDetailComponent.render(product);
         }
         headerComponent.render();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
-        window.location.hash = '#home';
+        router.navigate('#home');
       }
     });
 
@@ -127,7 +134,10 @@ export class App {
 
       this.closeAllOverlays();
       if (this.adminView) this.adminView.style.display = 'none';
-      if (this.detailView) this.detailView.classList.remove('active');
+      if (this.detailView) {
+        this.detailView.classList.remove('active');
+        this.detailView.style.display = 'none';
+      }
       if (this.homeView) this.homeView.style.display = 'block';
 
       // Always update header ensuring home admin concealment
@@ -256,12 +266,12 @@ export class App {
       }
 
       // 5. Product Card Click -> navigate to detail
-      const prodItem = e.target.closest('.prdList__item');
+      const prodItem = e.target.closest('.prdList__item') || e.target.closest('.product-link');
       if (prodItem && !e.target.closest('.icon__box')) {
-        const id = prodItem.dataset.id;
+        const id = prodItem.dataset.id || prodItem.closest('.prdList__item')?.dataset.id;
         if (id) {
           e.preventDefault();
-          window.location.hash = `#product-${id}`;
+          router.navigate(`#product-${id}`);
         }
         return;
       }

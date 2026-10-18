@@ -11,13 +11,34 @@ export class Router {
     this.guards = [];
     this.currentHash = '';
     this.isNavigating = false;
-
-    window.addEventListener('hashchange', () => this.handleRouting());
+    this.isInitialized = false;
   }
 
-  addRoute(pattern, handler) {
-    this.routes.push({ pattern, handler });
+  register(pattern, handler, options = {}) {
+    let regex = null;
+    if (pattern instanceof RegExp) {
+      regex = pattern;
+    } else if (typeof pattern === 'string') {
+      if (pattern.startsWith('^') || pattern.includes('(') || pattern.includes('*') || pattern.includes('+')) {
+        try {
+          regex = new RegExp(pattern, 'i');
+        } catch (e) {
+          console.error(`[Router] Invalid regex pattern: ${pattern}`, e);
+        }
+      }
+    }
+
+    this.routes.push({
+      pattern,
+      regex,
+      handler,
+      guard: options.guard || null
+    });
     return this;
+  }
+
+  addRoute(pattern, handler, options = {}) {
+    return this.register(pattern, handler, options);
   }
 
   addGuard(guardFn) {
@@ -43,11 +64,10 @@ export class Router {
       const cleanHash = rawHash.trim().toLowerCase();
       this.currentHash = cleanHash;
 
-      // 1. Run Route Guards
+      // 1. Run Global Route Guards
       for (const guard of this.guards) {
         const canProceed = guard(cleanHash, rawHash);
         if (canProceed === false) {
-          this.isNavigating = false;
           return;
         }
       }
@@ -55,32 +75,74 @@ export class Router {
       // 2. Match Route Handlers
       let matched = false;
       for (const route of this.routes) {
-        if (typeof route.pattern === 'string' && route.pattern === cleanHash) {
-          route.handler(rawHash);
-          matched = true;
-          break;
-        } else if (route.pattern instanceof RegExp && route.pattern.test(rawHash)) {
-          const match = rawHash.match(route.pattern);
-          route.handler(rawHash, match);
-          matched = true;
-          break;
+        if (route.regex) {
+          const match = rawHash.match(route.regex) || cleanHash.match(route.regex);
+          if (match) {
+            // Check route-specific guard
+            if (typeof route.guard === 'function') {
+              const canProceed = route.guard(cleanHash, rawHash);
+              if (canProceed === false) {
+                return;
+              }
+            }
+
+            const params = match.groups || {};
+            try {
+              route.handler(params, rawHash, match);
+            } catch (err) {
+              console.error(`[Router] Error executing handler for ${rawHash}:`, err);
+            }
+            matched = true;
+            break;
+          }
+        } else if (typeof route.pattern === 'string') {
+          if (cleanHash === route.pattern.toLowerCase()) {
+            // Check route-specific guard
+            if (typeof route.guard === 'function') {
+              const canProceed = route.guard(cleanHash, rawHash);
+              if (canProceed === false) {
+                return;
+              }
+            }
+
+            try {
+              route.handler({}, rawHash);
+            } catch (err) {
+              console.error(`[Router] Error executing handler for ${rawHash}:`, err);
+            }
+            matched = true;
+            break;
+          }
         }
       }
 
       // 3. Fallback to Home if not matched
       if (!matched && cleanHash.startsWith('#')) {
-        const homeRoute = this.routes.find(r => r.pattern === '#home' || r.pattern === '');
-        if (homeRoute) homeRoute.handler(rawHash);
+        const homeRoute = this.routes.find(r => r.pattern === '^.*$' || r.pattern === '#home' || r.pattern === '');
+        if (homeRoute) {
+          try {
+            homeRoute.handler({}, rawHash);
+          } catch (err) {
+            console.error(`[Router] Error executing fallback home handler for ${rawHash}:`, err);
+          }
+        }
       }
 
-      eventBus.emit(APP_EVENTS.NAVIGATE, { hash: cleanHash, raw: rawHash });
+      eventBus.publish(APP_EVENTS.NAVIGATE, { hash: cleanHash, raw: rawHash });
     } finally {
       this.isNavigating = false;
     }
   }
 
-  start() {
+  init() {
+    if (this.isInitialized) return;
+    this.isInitialized = true;
+    window.addEventListener('hashchange', () => this.handleRouting());
     this.handleRouting();
+  }
+
+  start() {
+    this.init();
   }
 }
 

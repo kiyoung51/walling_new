@@ -16,10 +16,18 @@ class EventBus {
     return () => this.off(event, callback);
   }
 
+  subscribe(event, callback) {
+    return this.on(event, callback);
+  }
+
   off(event, callback) {
     if (this.listeners.has(event)) {
       this.listeners.get(event).delete(callback);
     }
+  }
+
+  unsubscribe(event, callback) {
+    return this.off(event, callback);
   }
 
   emit(event, data = null) {
@@ -35,10 +43,16 @@ class EventBus {
 
     // Also dispatch to window CustomEvent for legacy/DOM interoperability
     try {
-      window.dispatchEvent(new CustomEvent(event, { detail: data }));
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent(event, { detail: data }));
+      }
     } catch (e) {
       // Ignore in non-browser env
     }
+  }
+
+  publish(event, data = null) {
+    return this.emit(event, data);
   }
 }
 
